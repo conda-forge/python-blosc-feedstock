@@ -11,6 +11,18 @@ Summary: A Python wrapper for the extremely fast Blosc compression library
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/python-blosc-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/python-blosc-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/python-blosc-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/python-blosc-feedstock)
+Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-blosc/badges/version.svg)](https://anaconda.org/conda-forge/python-blosc)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-blosc/badges/downloads.svg)](https://anaconda.org/conda-forge/python-blosc)
+
 Installing python-blosc
 =======================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `python-blosc` available on your p
 ```
 conda search python-blosc --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/python-blosc-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/python-blosc-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/python-blosc-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/python-blosc-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-blosc/badges/version.svg)](https://anaconda.org/conda-forge/python-blosc)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-blosc/badges/downloads.svg)](https://anaconda.org/conda-forge/python-blosc)
 
 
 Updating python-blosc-feedstock
