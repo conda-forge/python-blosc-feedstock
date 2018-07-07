@@ -14,14 +14,15 @@ Summary: A Python wrapper for the extremely fast Blosc compression library
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/python-blosc-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/python-blosc-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/python-blosc-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/python-blosc-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/python-blosc-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/python-blosc-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/python-blosc-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/python-blosc-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-blosc/badges/version.svg)](https://anaconda.org/conda-forge/python-blosc)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-blosc/badges/downloads.svg)](https://anaconda.org/conda-forge/python-blosc)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--blosc-green.svg)](https://anaconda.org/conda-forge/python-blosc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-blosc.svg)](https://anaconda.org/conda-forge/python-blosc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-blosc.svg)](https://anaconda.org/conda-forge/python-blosc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-blosc.svg)](https://anaconda.org/conda-forge/python-blosc) |
 
 Installing python-blosc
 =======================
@@ -66,6 +67,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
