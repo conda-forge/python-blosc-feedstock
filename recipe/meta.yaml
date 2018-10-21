@@ -15,7 +15,7 @@ build:
   number: 0
   script:
     - python setup.py install --blosc="$PREFIX" --single-version-externally-managed --record record.txt           # [unix]
-    - python setup.py install --blosc="%LIBRARY_PREFIX%" --single-version-externally-managed --record record.txt  # [win]
+    - python setup.py install --blosc="%LIBRARY_BIN%" --single-version-externally-managed --record record.txt  # [win]
 
 requirements:
   build:
