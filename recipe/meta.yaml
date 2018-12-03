@@ -1,6 +1,6 @@
 {% set name = "blosc" %}
-{% set version = "1.4.4" %}
-{% set sha256 = "76ae6e1cecddb320b5567ba78ee9a2ee31895ecba838fdf05fdb9131939a4705" %}
+{% set version = "1.6.2" %}
+{% set sha256 = "8113aaf6b3a2c16147d392231e3e10a8193d5ddd6efc44d8df2466d1dc53fbb8" %}
 
 package:
   name: python-{{ name|lower }}
@@ -12,13 +12,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --blosc=$PREFIX --single-version-externally-managed --record record.txt
+  number: 1
+  script:
+    - "{{ PYTHON }} -m pip install . -vv --install-option='--blosc=\"$PREFIX\"'"  # [unix]
+    - "{{ PYTHON }} -m pip install . -vv --install-option='--blosc=\"$PREFIX\"'"  # [win]
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
-    - setuptools
+    - pip
     - blosc
   run:
     - python
@@ -43,3 +48,4 @@ extra:
   recipe-maintainers:
     - danielfrg
     - FrancescElies
+    - beckermr
