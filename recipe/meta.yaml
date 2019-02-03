@@ -39,8 +39,8 @@ test:
 
 about:
   home: https://github.com/Blosc/python-blosc
-  license_family: Apache
-  license: Apache 2.0
+  license_family: BSD
+  license: BSD 3-Clause
   license_file: LICENSES/PYTHON-BLOSC.txt
   summary: 'A Python wrapper for the extremely fast Blosc compression library'
 
