@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   script:
     - "{{ PYTHON }} -m pip install . -vv --install-option=--blosc=\"$PREFIX\""  # [unix]
     - "{{ PYTHON }} -m pip install . -vv --install-option=--blosc=\"%LIBRARY_BIN%\""  # [win]
