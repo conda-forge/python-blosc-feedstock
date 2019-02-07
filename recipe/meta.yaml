@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   script:
     - "{{ PYTHON }} -m pip install . -vv --install-option=--blosc=\"$PREFIX\""  # [unix]
     - "{{ PYTHON }} -m pip install . -vv --install-option=--blosc=\"%LIBRARY_BIN%\""  # [win]
@@ -39,8 +39,8 @@ test:
 
 about:
   home: https://github.com/Blosc/python-blosc
-  license_family: Apache
-  license: Apache 2.0
+  license_family: BSD
+  license: BSD 3-Clause
   license_file: LICENSES/PYTHON-BLOSC.txt
   summary: 'A Python wrapper for the extremely fast Blosc compression library'
 
