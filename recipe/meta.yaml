@@ -21,16 +21,24 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - cmake
+    - ninja
   host:
     - python
     - pip
     - blosc
+    - setuptools
+    - wheel
+    - scikit-build
   run:
     - python
     - blosc
     - numpy
 
 test:
+  requires:
+    - numpy
+    - psutil
   imports:
     - blosc
   commands:
