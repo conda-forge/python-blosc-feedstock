@@ -14,6 +14,9 @@ source:
 build:
   number: 0
   script:
+    # Currently we can't use CMAKE_GENERATOR via conda_build_config.yaml due to
+    # https://github.com/AnacondaRecipes/aggregate/pull/182
+    - set "CMAKE_GENERATOR=NMake Makefiles"  # [win]
     - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
