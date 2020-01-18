@@ -1,14 +1,12 @@
-{% set name = "blosc" %}
 {% set version = "1.8.3" %}
 {% set sha256 = "e978a58e39a7b4bb4c1a5fb6757c97d3646634adf1cbde6789c7a508912d4dad" %}
 
 package:
-  name: python-{{ name|lower }}
+  name: python-blosc
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/b/blosc/blosc-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -24,7 +22,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - ninja
   host:
     - python
     - pip
@@ -35,7 +32,6 @@ requirements:
   run:
     - python
     - blosc
-    - numpy
 
 test:
   requires:
@@ -52,6 +48,8 @@ about:
   license_family: BSD
   license: BSD 3-Clause
   license_file: LICENSES/PYTHON-BLOSC.txt
+  dev_url: https://github.com/Blosc/python-blosc
+  doc_url: http://python-blosc.blosc.org/
   summary: 'A Python wrapper for the extremely fast Blosc compression library'
 
 extra:
