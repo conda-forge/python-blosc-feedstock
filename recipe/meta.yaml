@@ -46,7 +46,7 @@ test:
 about:
   home: https://github.com/Blosc/python-blosc
   license_family: BSD
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSES/PYTHON-BLOSC.txt
   dev_url: https://github.com/Blosc/python-blosc
   doc_url: http://python-blosc.blosc.org/
