@@ -1,5 +1,5 @@
-{% set version = "1.8.3" %}
-{% set sha256 = "e978a58e39a7b4bb4c1a5fb6757c97d3646634adf1cbde6789c7a508912d4dad" %}
+{% set version = "1.9.0" %}
+{% set sha256 = "5afcfb6e452d159cc5f6c11f69882e5816a5f20477653cdc10bb4e027e54bbd4" %}
 
 package:
   name: python-blosc
@@ -15,7 +15,7 @@ build:
     # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
     # due to https://github.com/AnacondaRecipes/aggregate/pull/182
     - set "CMAKE_GENERATOR={{ CMAKE_GENERATOR }}"  # [win]
-    - "{{ PYTHON }} -m pip install . -vv"
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -46,11 +46,11 @@ test:
 about:
   home: https://github.com/Blosc/python-blosc
   license_family: BSD
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSES/PYTHON-BLOSC.txt
   dev_url: https://github.com/Blosc/python-blosc
   doc_url: http://python-blosc.blosc.org/
-  summary: 'A Python wrapper for the extremely fast Blosc compression library'
+  summary: A Python wrapper for the extremely fast Blosc compression library
 
 extra:
   recipe-maintainers:
