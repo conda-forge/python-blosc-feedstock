@@ -1,5 +1,5 @@
-{% set version = "1.9.0" %}
-{% set sha256 = "5afcfb6e452d159cc5f6c11f69882e5816a5f20477653cdc10bb4e027e54bbd4" %}
+{% set version = "1.9.1" %}
+{% set sha256 = "47414c24230f1f91da6d5cdc51cd6d6b575000c7d0e7534a9da10da8d2978fe5" %}
 
 package:
   name: python-blosc
