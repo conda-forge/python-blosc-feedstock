@@ -3,7 +3,7 @@ About python-blosc
 
 Home: https://github.com/Blosc/python-blosc
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
