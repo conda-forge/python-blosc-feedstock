@@ -15,6 +15,8 @@ build:
     # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
     # due to https://github.com/AnacondaRecipes/aggregate/pull/182
     - set "CMAKE_GENERATOR={{ CMAKE_GENERATOR }}"  # [win]
+    - export DISABLE_BLOSC_SSE2=1  # [ppc64le]
+    - export DISABLE_BLOSC_AVX2=1  # [ppc64le]
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
