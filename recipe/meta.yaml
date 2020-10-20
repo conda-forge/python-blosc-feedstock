@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   script:
     # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
     # due to https://github.com/AnacondaRecipes/aggregate/pull/182
