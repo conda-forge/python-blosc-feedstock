@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   script:
     # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
     # due to https://github.com/AnacondaRecipes/aggregate/pull/182
@@ -50,7 +50,9 @@ about:
   home: https://github.com/Blosc/python-blosc
   license_family: BSD
   license: BSD-3-Clause
-  license_file: LICENSES/PYTHON-BLOSC.txt
+  license_file: 
+    - LICENSES/PYTHON-BLOSC.txt
+    - zstd-licenses.txt
   dev_url: https://github.com/Blosc/python-blosc
   doc_url: http://python-blosc.blosc.org/
   summary: A Python wrapper for the extremely fast Blosc compression library
