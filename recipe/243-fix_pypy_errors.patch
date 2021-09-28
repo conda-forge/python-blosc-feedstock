@@ -1,0 +1,31 @@
+From 25e7bedb7f85b772f528722abe6303de49536dd5 Mon Sep 17 00:00:00 2001
+From: Henry Schreiner <HenrySchreinerIII@gmail.com>
+Date: Tue, 3 Aug 2021 08:11:13 -0700
+Subject: [PATCH] fix: try to fix error on PyPy (#243)
+
+* fix: try to fix error on PyPy
+
+* fix: typo
+---
+ setup.py | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 2fd6619..8d4736c 100644
+--- a/setup.py
++++ b/setup.py
+@@ -50,9 +50,12 @@ def exit_with_error(message):
+         long_description = f.read()
+ 
+     # Blosc version
+-    VERSION = open('VERSION').read().strip()
++    with open('VERSION') as f:
++        VERSION = f.read().strip()
++
+     # Create the version.py file
+-    open('blosc/version.py', 'w').write('__version__ = "%s"\n' % VERSION)
++    with open('blosc/version.py', 'w') as f:
++        f.write('__version__ = "%s"\n' % VERSION)
+ 
+     def cmake_bool(cond):
+         return 'ON' if cond else 'OFF'
