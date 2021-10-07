@@ -1,5 +1,5 @@
-{% set version = "1.10.2" %}
-{% set sha256 = "eeba922f52becd697dc5cfcee8d01a03ba9597a54ce91fdacd9998492acbed9b" %}
+{% set version = "1.10.6" %}
+{% set sha256 = "55d9d57b85d6eeec010c6c399f2820f96f566dccbc6ddfeefb60501f8e10b548" %}
 
 package:
   name: python-blosc
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
     # due to https://github.com/AnacondaRecipes/aggregate/pull/182
