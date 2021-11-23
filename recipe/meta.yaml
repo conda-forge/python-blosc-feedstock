@@ -12,8 +12,8 @@ source:
 build:
   number: 2
   script:
-    - export DISABLE_BLOSC_SSE2=1  # [ppc64le]
-    - export DISABLE_BLOSC_AVX2=1  # [ppc64le]
+    - export DISABLE_BLOSC_SSE2=1  # [linux and not x86]
+    - export DISABLE_BLOSC_AVX2=1  # [linux and not x86]
     - {{ PYTHON }} -m pip install . -vv
     # When cross-compiling scikit-build will link to libpython.dylib which results
     # in segfaults. Let's replace that with libc++
