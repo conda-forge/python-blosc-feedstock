@@ -7,12 +7,17 @@ package:
 source:
   url: https://pypi.io/packages/source/b/blosc/blosc-{{ version }}.tar.gz
   sha256: 55d9d57b85d6eeec010c6c399f2820f96f566dccbc6ddfeefb60501f8e10b548
+  patches:
+    - 242-deactivate-sse-for-unsupported-cpus.patch
 
 build:
   number: 0
   script:
-    - export DISABLE_BLOSC_SSE2=1  # [linux and not x86]
-    - export DISABLE_BLOSC_AVX2=1  # [linux and not x86]
+    # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
+    # due to https://github.com/AnacondaRecipes/aggregate/pull/182
+    - set "CMAKE_GENERATOR={{ CMAKE_GENERATOR }}"  # [win]
+    - export USE_SYSTEM_BLOSC=1    # [unix]
+    - set "USE_SYSTEM_BLOSC=1"     # [win]
     - {{ PYTHON }} -m pip install . -vv
     # When cross-compiling scikit-build will link to libpython.dylib which results
     # in segfaults. Let's replace that with libc++
@@ -35,7 +40,7 @@ requirements:
     - scikit-build
   run:
     - python
-    - blosc
+    # - blosc
 
 test:
   requires:
@@ -53,7 +58,7 @@ about:
   license: BSD-3-Clause
   license_file:
     - LICENSES/BLOSC.txt
-    - zstd-licenses.txt
+    # - zstd-licenses.txt
   dev_url: https://github.com/Blosc/python-blosc
   doc_url: http://python-blosc.blosc.org/
   summary: A Python wrapper for the extremely fast Blosc compression library
