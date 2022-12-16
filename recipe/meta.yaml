@@ -1,4 +1,4 @@
-{% set version = "1.10.6" %}
+{% set version = "1.11.1" %}
 
 package:
   name: python-blosc
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/blosc/blosc-{{ version }}.tar.gz
-  sha256: 55d9d57b85d6eeec010c6c399f2820f96f566dccbc6ddfeefb60501f8e10b548
+  sha256: c22119b27bae1063a697f639028b422d55811b0880c3fc0149cbdea791d0b276
   patches:
     - 242-deactivate-sse-for-unsupported-cpus.patch
 
 build:
-  number: 1
+  number: 0
   script:
     # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
     # due to https://github.com/AnacondaRecipes/aggregate/pull/182
