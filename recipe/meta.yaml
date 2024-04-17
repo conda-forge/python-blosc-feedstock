@@ -56,7 +56,7 @@ about:
   license_family: BSD
   license: BSD-3-Clause
   license_file:
-    - LICENSES/BLOSC.txt
+    - LICENSE.txt
   dev_url: https://github.com/Blosc/python-blosc
   doc_url: http://python-blosc.blosc.org/
   summary: A Python wrapper for the extremely fast Blosc compression library
