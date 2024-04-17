@@ -13,9 +13,6 @@ source:
 build:
   number: 0
   script:
-    # We can't use CMAKE_GENERATOR implicitly via conda_build_config.yaml, yet,
-    # due to https://github.com/AnacondaRecipes/aggregate/pull/182
-    - set "CMAKE_GENERATOR={{ CMAKE_GENERATOR }}"  # [win]
     - export USE_SYSTEM_BLOSC=1    # [unix]
     - set "USE_SYSTEM_BLOSC=1"     # [win]
     - {{ PYTHON }} -m pip install . -vv
