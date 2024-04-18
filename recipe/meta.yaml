@@ -42,7 +42,10 @@ requirements:
 test:
   requires:
     - numpy
-    - psutil
+    # `test_no_leaks` fails on macOS PyPy.
+    # The test uses `psutil`. So just drop `psutil` to skip the test.
+    # xref: https://github.com/conda-forge/python-blosc-feedstock/issues/56
+    - psutil    # [osx and python_impl == "cpython"]
   imports:
     - blosc
   commands:
