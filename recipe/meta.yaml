@@ -11,7 +11,7 @@ source:
     - 242-deactivate-sse-for-unsupported-cpus.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - export USE_SYSTEM_BLOSC=1    # [unix]
     - set "USE_SYSTEM_BLOSC=1"     # [win]
@@ -24,6 +24,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - {{ stdlib("c") }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
@@ -41,7 +42,10 @@ requirements:
 test:
   requires:
     - numpy
-    - psutil
+    # `test_no_leaks` fails on macOS PyPy.
+    # The test uses `psutil`. So just drop `psutil` to skip the test.
+    # xref: https://github.com/conda-forge/python-blosc-feedstock/issues/56
+    - psutil    # [not (osx and python_impl == "pypy")]
   imports:
     - blosc
   commands:
