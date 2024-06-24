@@ -1,4 +1,4 @@
-{% set version = "1.11.1" %}
+{% set version = "1.11.2" %}
 
 package:
   name: python-blosc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/blosc/blosc-{{ version }}.tar.gz
-  sha256: c22119b27bae1063a697f639028b422d55811b0880c3fc0149cbdea791d0b276
+  sha256: ac5e7c1bfc1c7232b900be94cddb5ffcf9ea49f313c8ae98a7ca0dd87b872bf4
   patches:
     - 242-deactivate-sse-for-unsupported-cpus.patch
 
@@ -25,6 +25,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make
