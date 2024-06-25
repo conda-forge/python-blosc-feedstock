@@ -7,15 +7,14 @@ package:
 source:
   url: https://pypi.io/packages/source/b/blosc/blosc-{{ version }}.tar.gz
   sha256: ac5e7c1bfc1c7232b900be94cddb5ffcf9ea49f313c8ae98a7ca0dd87b872bf4
-  patches:
-    - 242-deactivate-sse-for-unsupported-cpus.patch
 
 build:
   number: 0
+  skip: True  # [py<39]
   script:
     - export USE_SYSTEM_BLOSC=1    # [unix]
     - set "USE_SYSTEM_BLOSC=1"     # [win]
-    - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     # When cross-compiling scikit-build will link to libpython.dylib which results
     # in segfaults. Let's replace that with libc++
     - ${INSTALL_NAME_TOOL} -change @rpath/libpython${PY_VER}.dylib @rpath/libc++.1.dylib ${PREFIX}/lib/python${PY_VER}/site-packages/blosc/blosc_extension.cpython-{{ py }}-darwin.so   # [build_platform != target_platform and osx]
@@ -41,11 +40,13 @@ requirements:
 
 test:
   requires:
+    - pip
     - numpy
     - psutil
   imports:
     - blosc
   commands:
+    - pip check
     - python -c "import blosc; blosc.print_versions()"
     - python -c "import blosc; blosc.test()"
 
