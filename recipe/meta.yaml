@@ -9,7 +9,7 @@ source:
   sha256: ac5e7c1bfc1c7232b900be94cddb5ffcf9ea49f313c8ae98a7ca0dd87b872bf4
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<39]
   script:
     - export USE_SYSTEM_BLOSC=1    # [unix]
